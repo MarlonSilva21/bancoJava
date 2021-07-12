@@ -14,8 +14,8 @@ public class ContaEstudantil extends Conta {
 	}
 
 	public void setLimiteEstudantil(double limiteEstudantil) {
-		this.limiteEstudantil = limiteEstudantil;
-	}
+	 		this.limiteEstudantil = limiteEstudantil;
 	
+	}
 	
 }

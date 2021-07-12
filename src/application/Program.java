@@ -6,16 +6,15 @@ import java.util.Scanner;
 import entities.ContaCorrente;
 import entities.ContaEmpresarial;
 import entities.ContaEspecial;
+import entities.ContaEstudantil;
 import entities.ContaPoupanca;
 
 public class Program {
 	
 	public static void main(String[] args) {
-
 		
 		Locale.setDefault(Locale.US);
 		MenuPrincipal();
-
 	}
 	
 	public static void MenuPrincipal () {
@@ -37,31 +36,34 @@ public class Program {
 		System.out.println();
 		System.out.print("Selecione uma operação: ");
 		int escolhaMenu = leia.nextInt();
+		System.out.println();
+		System.out.print("Digite o número da conta: ");
+		int numeroConta = leia.nextInt();
 		
 		if (escolhaMenu == 1) {
 			System.out.println("\n------POUPANÇA------");
-			ContaPoupanca conta1 = new ContaPoupanca(123, 15); 
+			ContaPoupanca conta1 = new ContaPoupanca(numeroConta, 15); 
 			Tela2("");
 		}
 		else if (escolhaMenu == 2) {
 			System.out.println("Corrente");
-			ContaCorrente conta1 = new ContaCorrente(123);
+			ContaCorrente conta1 = new ContaCorrente(numeroConta);
 			Tela2("");
 		}
 		else if (escolhaMenu == 3) {
 			System.out.println("Especial");
-			ContaEspecial conta1 = new ContaEspecial(123, 1000.0);
+			ContaEspecial conta1 = new ContaEspecial(numeroConta, 1000.0);
 			Tela2("3 - LIMITE\n");
 		}
 		else if (escolhaMenu == 4) {
 			System.out.println("Empresarial");
-			ContaEmpresarial conta1 = new ContaEmpresarial(123, 10000);
+			ContaEmpresarial conta1 = new ContaEmpresarial(numeroConta, 10000);
 			System.out.println(conta1.getSaldo());
 			Tela2("3 - EMPRÉSTIMO\n");
 		}
 		else if (escolhaMenu == 5) {
 			System.out.println("Estudantil");
-			//ContaEstudantil
+			ContaEstudantil conta1 = new ContaEstudantil(numeroConta, 5000);
 			Tela2("3 - LIMITE ESTUDANTIL\n");
 		}
 		else if (escolhaMenu == 6) {
@@ -77,7 +79,6 @@ public class Program {
 	}
 	
 	public static void Tela2 (String x) {
-
 		
 		Scanner leia = new Scanner(System.in);
 		int i = 0;
@@ -100,7 +101,7 @@ public class Program {
 			operacaoMenu = leia.nextInt();
 		
 		if(operacaoMenu == 1) {
-			//super();
+
 		}
 		
 			i++;
