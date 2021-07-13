@@ -13,15 +13,17 @@ public class ProgramEmp {
 	
 	public static void main(String[] args) {
 		
+		
 		Locale.setDefault(Locale.US);
 		MenuPrincipal();
 	}
 	
 	public static void MenuPrincipal () {
+		int numeroConta = 0;
 		
 		Scanner leia = new Scanner(System.in);
 		int operacaoMenu;
-		
+		char creditoFim;
 		
 		System.out.println("------BANZZAI------");
 		System.out.println("--時間は私たちの保証です--");
@@ -40,12 +42,12 @@ public class ProgramEmp {
 		int escolhaMenu = leia.nextInt();
 		System.out.println();
 		System.out.print("Digite o número da conta: ");
-		int numeroConta = leia.nextInt();
+		numeroConta = leia.nextInt();
 		
 		ContaPoupanca poupanca = new ContaPoupanca(numeroConta, 15); 
 		ContaCorrente corrente = new ContaCorrente(numeroConta);
 		ContaEspecial especial = new ContaEspecial(numeroConta, 1000.0);
-		
+		ContaEmpresarial empresarial = new ContaEmpresarial(numeroConta, 10000.0);
 		ContaEstudantil estudantil = new ContaEstudantil(numeroConta, 5000.0);
 		
 		switch(escolhaMenu) {
@@ -63,48 +65,13 @@ public class ProgramEmp {
 			//ContaEspecial
 			break;
 		case 4:
-			ContaEmpresarial empresarial = new ContaEmpresarial(numeroConta, 10000.0);
+			
 			int i =0;
 			char continua;
 			for (i=1;i<=10;i++) {
 			ContaMenu("EMPRESARIAL","3 - EMPRÉSTIMO\n");
 			System.out.println("Selecione uma operação: ");
 			operacaoMenu = leia.nextInt();
-		
-			/*switch(operacaoMenu) {
-			
-			//opcao saque
-			case 1: 
-				System.out.println("Valor do saque: R$");
-				int valorSaqueEmp = leia.nextInt();
-				empresarial.saque(valorSaqueEmp);
-				System.out.println("\nSaldo: R$"+empresarial.getSaldo());
-				System.out.println("Limite Empresarial: R$"+empresarial.getLimiteEmpresarial()+"\n");
-				break;
-			
-			//opcao deposito
-			case 2: 
-				System.out.println("Valor do depósito: R$");
-				int valorDepositoEmp = leia.nextInt();
-				empresarial.deposito(valorDepositoEmp);
-				System.out.println("\nSaldo: R$"+empresarial.getSaldo());
-				System.out.println("Limite Empresarial: R$"+empresarial.getLimiteEmpresarial());
-				break;
-				
-			//opçao emprestimo
-			case 3:
-				System.out.println("Valor do empréstimo: R$");
-				int valorEmprestimoEmp = leia.nextInt();
-				empresarial.limiteEmpresarial(valorEmprestimoEmp);
-				System.out.println("\nSaldo: R$"+empresarial.getSaldo());
-				System.out.println("Limite Empresarial: R$"+empresarial.getLimiteEmpresarial());
-				break;
-				
-			//opçao voltar menu
-			case 0:
-				MenuPrincipal();
-				
-			default:*/
 				
 			
 				if(operacaoMenu == 1) {
@@ -154,7 +121,43 @@ public class ProgramEmp {
 					}
 					
 				}while(continua != 'S' && continua != 'N');
+				
+				int contador = 1;
+				contador++;
+				if (contador>=10) {
+					System.out.println("O limite de 10 operações diárias foi excedido.");
+				}
 			}	
+			do {
+				//System.out.println("O limite de 10 operações diárias foi excedido.");
+				System.out.println("Gostaria de realizar um empréstimo? [S/N]");
+				
+			creditoFim = leia.next().toUpperCase().charAt(0);
+			
+			if(creditoFim != 'S' && creditoFim != 'N') {
+				
+				
+				System.out.println("\nOpção inválida\n\n");
+				//System.out.println("Gostaria de realizar um empréstimo? [S/N]");
+				//creditoFim = leia.next().toUpperCase().charAt(0);
+				}
+			
+			else if (creditoFim == 'S') {
+				System.out.println("Valor do empréstimo: R$");
+				int valorEmprestimoEmp = leia.nextInt();
+				empresarial.limiteEmpresarial(valorEmprestimoEmp);
+				System.out.println("\nSaldo: R$"+empresarial.getSaldo());
+				System.out.println("Limite Empresarial: R$"+empresarial.getLimiteEmpresarial());
+			}
+			else if (creditoFim == 'N') {
+				break;
+			}
+			
+			}while(creditoFim != 'S' && creditoFim != 'N');
+			
+			
+			
+			
 			//ContaEmpresarial
 			MenuPrincipal();
 			break;

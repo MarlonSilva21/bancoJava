@@ -61,7 +61,7 @@ public class ContaEmpresarial extends Conta {
 		}
 		
 		else if(valorLimiteEmpresarial > limiteEmpresarial) {
-			System.out.println("Operação inválida.\nLimite Empresarial: R$"+limiteEmpresarial);
+			System.out.println("Limite Empresarial insuficiente.\nLimite Empresarial: R$"+limiteEmpresarial);
 		}
 		
 		else {
