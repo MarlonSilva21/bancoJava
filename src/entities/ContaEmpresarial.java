@@ -53,4 +53,20 @@ public class ContaEmpresarial extends Conta {
 		System.out.println("Operação realizada com sucesso.");
 		}
 	}
+	
+	public void limiteEmpresarial (double valorLimiteEmpresarial) {
+		if(valorLimiteEmpresarial <= 0) {
+			System.out.println("Operação inválida.");
+		}
+		
+		else if(valorLimiteEmpresarial > limiteEmpresarial) {
+			System.out.println("Operação inválida.\nLimite Empresarial: R$"+limiteEmpresarial);
+		}
+		
+		else {
+			limiteEmpresarial -= valorLimiteEmpresarial;
+		}
+		
+		
+	}
 }
