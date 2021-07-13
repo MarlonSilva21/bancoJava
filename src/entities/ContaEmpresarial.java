@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ContaEmpresarial extends Conta {
 	
-	private double valorLimiteSaldoInsuficiente;
+	private double valorLimiteSaldoInsuficiente = 0.00;
 	private double limiteEmpresarial;
 	Scanner leia = new Scanner(System.in);
 
@@ -36,7 +36,7 @@ public class ContaEmpresarial extends Conta {
 			char usarLimite = leia.next().toUpperCase().charAt(0);
 				if (usarLimite == 'S') {
 				valorLimiteSaldoInsuficiente = saldo - valorSaque;
-				limiteEmpresarial -= valorLimiteSaldoInsuficiente;
+				limiteEmpresarial += valorLimiteSaldoInsuficiente;
 				
 				}
 				else if (usarLimite == 'N') {
