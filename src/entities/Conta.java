@@ -6,11 +6,11 @@ public abstract class Conta {
 	private int numeroConta;
 	protected double saldo;
 	
-	
+	//ENCAPSULAMENTO
 	public Conta(int numeroConta) {
 		this.numeroConta = numeroConta;
 	}
-
+	
 	public int getNumeroConta() {
 		return numeroConta;
 	}
