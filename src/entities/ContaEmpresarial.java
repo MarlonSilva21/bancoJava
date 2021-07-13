@@ -31,7 +31,7 @@ public class ContaEmpresarial extends Conta {
 			System.out.println("Saldo insuficiente.");
 		}
 		
-		else if (valorSaque>saldo && limiteEmpresarial > (valorSaque - saldo)) {
+		else if (valorSaque>saldo && limiteEmpresarial >= (valorSaque - saldo)) {
 			System.out.println("\nSaldo insuficiente.\nGostaria de usar o Limite Especial para completar a transação? [S/N]: ");
 			char usarLimite = leia.next().toUpperCase().charAt(0);
 				if (usarLimite == 'S') {
