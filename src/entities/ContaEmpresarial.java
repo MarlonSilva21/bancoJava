@@ -32,19 +32,20 @@ public class ContaEmpresarial extends Conta {
 		}
 		
 		else if (valorSaque>saldo && limiteEmpresarial > (valorSaque - saldo)) {
-			System.out.println("Saldo insuficiente.\nGostaria de usar o Limite Especial para completar a transação? [S/N]: ");
+			System.out.println("\nSaldo insuficiente.\nGostaria de usar o Limite Especial para completar a transação? [S/N]: ");
 			char usarLimite = leia.next().toUpperCase().charAt(0);
 				if (usarLimite == 'S') {
 				valorLimiteSaldoInsuficiente = saldo - valorSaque;
 				limiteEmpresarial += valorLimiteSaldoInsuficiente;
-				
+				saldo = 0.00;
+				System.out.println("\nTransação realizada com sucesso.");
 				}
 				else if (usarLimite == 'N') {
-					System.out.println("Transação cancelada.");
+					System.out.println("\nTransação cancelada.");
 				}
 				
 				else {
-					System.out.println("Opção inválida, cancelando transação.");
+					System.out.println("\nOpção inválida, cancelando transação.");
 				}
 				
 		}

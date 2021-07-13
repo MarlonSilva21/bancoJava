@@ -61,21 +61,21 @@ public class Program {
 			System.out.println(conta1.getSaldo());
 			System.out.println(conta1.getLimiteEmpresarial());
 			
-			System.out.println("Depósito de 100: ");
-			conta1.deposito(100);
-			System.out.println("Saldo: R$"+conta1.getSaldo());
-			System.out.println("Saque de 50");
-			conta1.saque(50);
-			conta1.saque(50);
-			conta1.saque(50);
-			System.out.println("Saldo: R$"+conta1.getSaldo());
-			System.out.println("Limite Empresarial: R$"+conta1.getLimiteEmpresarial());
-			System.out.println("Saldo: R$"+conta1.getSaldo());
-			System.out.println("Usar crédito de 100: ");
-			conta1.limiteEmpresarial(100);
-			System.out.println("Saldo: R$"+conta1.getSaldo());
-			System.out.println("Limite Empresarial: R$"+conta1.getLimiteEmpresarial());
-			
+//			System.out.println("Depósito de 100: ");
+//			conta1.deposito(100);
+//			System.out.println("Saldo: R$"+conta1.getSaldo());
+//			System.out.println("Saque de 50");
+//			conta1.saque(50);
+//			conta1.saque(50);
+//			conta1.saque(50);
+//			System.out.println("Saldo: R$"+conta1.getSaldo());
+//			System.out.println("Limite Empresarial: R$"+conta1.getLimiteEmpresarial());
+//			System.out.println("Saldo: R$"+conta1.getSaldo());
+//			System.out.println("Usar crédito de 100: ");
+//			conta1.limiteEmpresarial(100);
+//			System.out.println("Saldo: R$"+conta1.getSaldo());
+//			System.out.println("Limite Empresarial: R$"+conta1.getLimiteEmpresarial());
+//			
 			
 		//	Tela2("3 - EMPRÉSTIMO\n");
 			
