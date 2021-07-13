@@ -18,7 +18,7 @@ public class Program {
 	}
 	
 	public static void MenuPrincipal () {
-
+		
 		Scanner leia = new Scanner(System.in);
 		
 		System.out.println("------BANZZAI------");
@@ -48,6 +48,9 @@ public class Program {
 		else if (escolhaMenu == 2) {
 			System.out.println("Corrente");
 			ContaCorrente conta1 = new ContaCorrente(numeroConta);
+			//conta1.deposito(50.0); deposito para testar taloes
+			System.out.println(conta1.getSaldo());
+			conta1.oferecerTalao();
 			Tela2("");
 		}
 		else if (escolhaMenu == 3) {
@@ -57,13 +60,13 @@ public class Program {
 		}
 		else if (escolhaMenu == 4) {
 			System.out.println("Empresarial");
-			ContaEmpresarial conta1 = new ContaEmpresarial(numeroConta, 10000);
+			ContaEmpresarial conta1 = new ContaEmpresarial(numeroConta, 10000.0);
 			System.out.println(conta1.getSaldo());
 			Tela2("3 - EMPRÉSTIMO\n");
 		}
 		else if (escolhaMenu == 5) {
 			System.out.println("Estudantil");
-			ContaEstudantil conta1 = new ContaEstudantil(numeroConta, 5000);
+			ContaEstudantil conta1 = new ContaEstudantil(numeroConta, 5000.0);
 			Tela2("3 - LIMITE ESTUDANTIL\n");
 		}
 		else if (escolhaMenu == 6) {
@@ -88,6 +91,7 @@ public class Program {
 			System.out.println("-------BANZZAI------");
 			System.out.println("--時間は私たちの保証です--");
 			
+			
 			System.out.println();
 			System.out.println("===================");
 			System.out.println("1 - SAQUE");
@@ -101,7 +105,9 @@ public class Program {
 			operacaoMenu = leia.nextInt();
 		
 		if(operacaoMenu == 1) {
-
+			System.out.println("Digite o valor a ser sacado: R$ ");
+			double valorSaque = leia.nextDouble();
+			//conta1.saque(valorSaque);
 		}
 		
 			i++;
@@ -110,5 +116,6 @@ public class Program {
 		leia.close();
 
 	}
+	
 
 }
