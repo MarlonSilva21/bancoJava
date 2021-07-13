@@ -30,25 +30,25 @@ public class ContaEspecial extends Conta {
 			System.out.println("Operação inválida.");
 		}
 		
-				else if(valorSaque <= (saldo+limiteEspecial)) {
-			double valorDif = valorSaque - this.saldo;
-			usarLimite(valorDif);
+		else if (valorSaque > (saldo+limiteEspecial)) {
+		System.out.println("Não possui valor para essa operação!");
 		}
 		
 		
-//		else if (valorSaque > (saldo+limiteEspecial)) {
-//			System.out.println("Não possui valor para essa operação");
-//		}
-//		
+		else if(valorSaque >saldo && valorSaque <= limiteEspecial) {
+		double valorDif = valorSaque - this.saldo;
+		this.saldo = this.saldo -(valorSaque - valorDif);
+		usarLimite(valorDif);
 		
-//		else if (saldo < valorSaque) {
-//			this.saldo -= valorSaque;
-//			System.out.println("Saldo insuficiente.");
-//		}
-		else if (saldo > valorSaque){
+		
+		}
+		
+		else if (saldo <= valorSaque){
 		this.saldo -= valorSaque;
 		System.out.println("Operação realizada com sucesso.");
 		}
+		
+	
 	
 	}
 }
