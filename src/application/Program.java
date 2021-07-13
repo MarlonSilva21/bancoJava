@@ -21,6 +21,8 @@ public class Program {
 		
 		Scanner leia = new Scanner(System.in);
 		
+		
+		
 		System.out.println("------BANZZAI------");
 		System.out.println("--時間は私たちの保証です--");
 		
@@ -40,34 +42,79 @@ public class Program {
 		System.out.print("Digite o número da conta: ");
 		int numeroConta = leia.nextInt();
 		
-		if (escolhaMenu == 1) {
+		ContaPoupanca poupanca = new ContaPoupanca(numeroConta, 15); 
+		ContaCorrente corrente = new ContaCorrente(numeroConta);
+		ContaEspecial especial = new ContaEspecial(numeroConta, 1000.0);
+		ContaEmpresarial empresarial = new ContaEmpresarial(numeroConta, 10000.0);
+		ContaEstudantil estudantil = new ContaEstudantil(numeroConta, 5000.0);
+		
+		switch(escolhaMenu) {
+		case 1: //ContaPoupanca();
 			System.out.println("\n------POUPANÇA------");
-			ContaPoupanca conta1 = new ContaPoupanca(numeroConta, 15); 
-			Tela2("");
+			
+			
+			break;
+		case 2:
+			System.out.println("Corrente");
+			//ContaCorrente
+			break;
+		case 3:
+			System.out.println("Especial");
+			//ContaEspecial
+			break;
+		case 4:
+			System.out.println("Empresarial");
+			//ContaEmpresarial
+			break;
+		case 5:
+			System.out.println("Estudantil");
+			//ContaEstudantil
+			break;
+		case 6:
+			System.out.println("SAIR");
+			break;
+		default: 
+			System.out.println("Opção inválida.\n");
+			MenuPrincipal();
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*if (escolhaMenu == 1) {
+			System.out.println("\n------POUPANÇA------");
+			
+			
 		}
 		else if (escolhaMenu == 2) {
 			System.out.println("Corrente");
-			ContaCorrente conta1 = new ContaCorrente(numeroConta);
+			
 			//conta1.deposito(50.0); deposito para testar taloes
 			System.out.println(conta1.getSaldo());
 			conta1.oferecerTalao();
-			Tela2("");
+			
 		}
 		else if (escolhaMenu == 3) {
 			System.out.println("Especial");
-			ContaEspecial conta1 = new ContaEspecial(numeroConta, 1000.0);
-			Tela2("3 - LIMITE\n");
+			
+			
 		}
 		else if (escolhaMenu == 4) {
 			System.out.println("Empresarial");
-			ContaEmpresarial conta1 = new ContaEmpresarial(numeroConta, 10000.0);
+			
 			System.out.println(conta1.getSaldo());
-			Tela2("3 - EMPRÉSTIMO\n");
+			
 		}
 		else if (escolhaMenu == 5) {
 			System.out.println("Estudantil");
-			ContaEstudantil conta1 = new ContaEstudantil(numeroConta, 5000.0);
-			Tela2("3 - LIMITE ESTUDANTIL\n");
+			
+			
 		}
 		else if (escolhaMenu == 6) {
 			System.out.println("SAIR");
@@ -115,7 +162,7 @@ public class Program {
 		}while( i < 10);
 		leia.close();
 
-	}
+	}*/
 	
 
 }
