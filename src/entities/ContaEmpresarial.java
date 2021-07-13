@@ -24,11 +24,11 @@ public class ContaEmpresarial extends Conta {
 	@Override
 	public void saque (double valorSaque) {
 		if(valorSaque <= 0) {
-			System.out.println("Operação inválida.");
+			System.out.println("\nOperação inválida.");
 		}
 		
 		else if (valorSaque>saldo  && limiteEmpresarial < (valorSaque - saldo)) {
-			System.out.println("Saldo insuficiente.");
+			System.out.println("\nSaldo insuficiente.");
 		}
 		
 		else if (valorSaque>saldo && limiteEmpresarial >= (valorSaque - saldo)) {
