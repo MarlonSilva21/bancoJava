@@ -64,6 +64,7 @@ public class ContaEmpresarial extends Conta {
 		}
 		
 		else {
+			saldo += valorLimiteEmpresarial;
 			limiteEmpresarial -= valorLimiteEmpresarial;
 		}
 		
